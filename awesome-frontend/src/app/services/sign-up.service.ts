@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
 import { HOST_URL } from './host';
 @Injectable()
 export class SignUpService {
@@ -7,7 +7,16 @@ export class SignUpService {
 
     constructor(public http: Http) { }
     signUp(info) {
-        return this.http.post(`${this.host}/sign-up`, JSON.stringify(info))
+        let header = new Headers({
+            'Content-Type': 'application/json'
+          });
+          let options = new RequestOptions({
+            headers: header
+         });
+        return this.http.post(`${this.host}/user`, JSON.stringify(info), options)
+    }
+    getUserByName(name) {
+        return this.http.get(`${this.host}/user/${name}`);
     }
 
 }

@@ -1,4 +1,4 @@
-DROP schema PUBLIC;
+DROP schema PUBLIC CASCADE ;
 
 CREATE TABLE users(
   user_id BIGSERIAL,
@@ -6,5 +6,4 @@ CREATE TABLE users(
   surname VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL
-
 );

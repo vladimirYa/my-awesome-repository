@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {HibernateJpaAutoConfiguration.class, SecurityAutoConfiguration.class})
+@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class})
 public class BackendApplication {
 
 	public static void main(String[] args) {
